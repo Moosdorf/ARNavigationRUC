@@ -36,8 +36,8 @@ public class UpdateARInfo : MonoBehaviour
     public ParticleSystem particleEffect;
     private ParticleSystem currentParticleEffect;
     private bool anchorsPlaced = false;
-    private const int HorizontalThreshold = 5;
-    private const int OrientationThreshold = 15;
+    private const int HorizontalThreshold = 10;
+    private const int OrientationThreshold = 25;
 
     public enum State {
         NoRoute,
@@ -336,12 +336,10 @@ public class UpdateARInfo : MonoBehaviour
         
         RouteFinishedText.text = string.Format("You have reached the final destination!{0}" +
                                 "Total distance {1}m{0}" +
-                                "Time taken: {2} h/m/s{0}" +
-                                "Your average speed was {3}km/h",
+                                "Time taken: {2} h/m/s{0}",
                                 Environment.NewLine,
                                 routeStats.Distance,
-                                routeStats.TimeTaken,
-                                routeStats.AvgKmt);
+                                routeStats.TimeTaken);
     }
 
     private void PlaceRouteObjects() {
